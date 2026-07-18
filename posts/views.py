@@ -67,7 +67,7 @@ class CommentView(APIView):
 
 
 class LikeView(APIView):
-    permission_classes = IsAuthenticated
+    permission_classes = [IsAuthenticated]
 
     def get_post(self, post_pk):
         try:
@@ -91,4 +91,4 @@ class LikeView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save(post=post, user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
