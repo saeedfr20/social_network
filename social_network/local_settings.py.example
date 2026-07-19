@@ -1,3 +1,4 @@
+IS_DEVEL = True
 DEBUG = True
 ALLOWED_HOSTS = []
 SECRET_KEY = 'your-secret-key-here'

@@ -22,7 +22,7 @@ class Post(models.Model):
 
 class PostFile(models.Model):
     post = models.ForeignKey(to=Post, on_delete=models.CASCADE)
-    file = models.FileField()
+    file = models.FileField(upload_to='post_files/')
     created_time = models.DateTimeField(auto_now_add=True)
     updated_time = models.DateTimeField(auto_now=True)
 
