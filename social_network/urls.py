@@ -31,7 +31,7 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
     path('api/', include('posts.urls')),
-
+    path('api/friendship/', include('friendship.urls')),
 ]
 if settings.IS_DEVEL:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
